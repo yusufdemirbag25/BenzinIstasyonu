@@ -1,37 +1,23 @@
 ﻿
 using BenzinIstasyonu.model;
+using BenzinIstasyonu.repo;
 
 namespace BenzinIstasyonu.service
 {
     internal class CustomerService
     {
         Customer customer = new Customer();
+        CustomerDB custDB = new CustomerDB();
 
-
-        public int fuelType (int fuelType)
+      
+        public void welcomeCust (string plate, int liter, bool auto)
         {
-            if (fuelType == 1)
-            {
-                return 1;
-            }
-
-            else if (fuelType == 2)
-            {
-                return 2;
-            }
-
-            else (fuelType == 3)
-            {
-                return 3;
-            }
+            customer.autoFill = auto;
+            customer.wantedLiter = liter;
+            customer.plateNumber = plate;
+            custDB.saveCust (customer);
         }
-        public void customerWelcome(string Plate, int Liter, bool autofill)
-        {
-            customer.plateNumber = Plate;
-            customer.autoFill = autofill;
-            customer.wantedLiter = Liter;
-
-        }
+        
 
         
 
