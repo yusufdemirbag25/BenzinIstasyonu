@@ -6,7 +6,7 @@ namespace BenzinIstasyonu.repo
 {
     internal class PumpDB
     {
-        public List<Pump> pumpList =new List<Pump>();
+        public static List<Pump> pumpList =new List<Pump>();
 
         
         public PumpDB()

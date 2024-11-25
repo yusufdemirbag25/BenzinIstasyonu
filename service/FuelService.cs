@@ -2,6 +2,7 @@
 
 using BenzinIstasyonu.model;
 using BenzinIstasyonu.repo;
+using System.Linq.Expressions;
 
 namespace BenzinIstasyonu.service
 {
@@ -10,7 +11,7 @@ namespace BenzinIstasyonu.service
         FuelDB fuelDB = new FuelDB();
         Fuel fuel;
         Customer cust = new Customer();
-
+        PumpService pumpService;
         public void fuelStart()
         {
             fuel.remainFuel = 6500;
@@ -48,6 +49,8 @@ namespace BenzinIstasyonu.service
                 return false;
             }
         }
+
+     
 
         public enum fuelType
         {
